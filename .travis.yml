@@ -8,4 +8,16 @@ before_install:
 script:
   # - docker run doolin/frontend-dockerized npm run test -- --coverage
   - docker run -e CI=true doolin/frontend-dockerized npm run test -- --coverage
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "frontend-dockerized"
+  env: "Frontenddockerized-env"
+  bucket_name: "elasticbeanstalk-us-west-1-549433113858"
+  bucket_path: "frontend-dockerized"
+  on:
+    branch: main
+  access_key_id: $AWS_BEANSTALK_TRAVIS_CI_KEY_ID
+  secret_access_key:
+    secure: "$AWS_BEANSTALK_TRAVIS_CI_KEY"
