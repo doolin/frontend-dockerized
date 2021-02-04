@@ -18,6 +18,6 @@ deploy:
   bucket_path: "frontend-dockerized"
   on:
     branch: main
-  access_key_id: $AWS_BEANSTALK_TRAVIS_CI_KEY_ID
+  access_key_id: "$AWS_BEANSTALK_TRAVIS_CI_KEY_ID"
   secret_access_key:
     secure: "$AWS_BEANSTALK_TRAVIS_CI_KEY"
