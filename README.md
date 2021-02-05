@@ -4,6 +4,8 @@ This is from Stephen Grider's course on Udemy
 [Docker and Kubernetes](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/).
 
 
+* `docker build -f Dockerfile.dev -t dave .`
+* `docker run dave npm run test`
 
 
 ## Getting Started with Create React App
